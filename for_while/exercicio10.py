@@ -3,5 +3,6 @@ numero = 0
 for n in numeros:
     n = int(n)
     if n > numero:
+        antigo = numero
         numero = n
-print(f"{n} é o maior")
+print(f"{antigo} é o segundo maior")
