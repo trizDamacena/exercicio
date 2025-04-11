@@ -3,11 +3,11 @@ nCoelhos = int(input("Digite o número de coelhos: "))
 tReproducao = int(input("Qual a taxa de reprodução: "))
 tMortalidade = int(input("Qual a taxa de mortalidade: "))
 coelhosNovos = 0
-for geracao in range(nGeracoes):
-    tReproducao = (nCoelhos *tReproducao)/100
-    tMortalidade = (nCoelhos * tReproducao)/100
-    nCoelhos += tReproducao
-    nCoelhos -= tMortalidade
+
+for geracao in range(1, nGeracoes+1):
+    R = tReproducao = (nCoelhos *tReproducao)//100
+    M =tMortalidade = ((nCoelhos + R) * tMortalidade)//100
+    nCoelhos += R
+    nCoelhos -= M
     coelhosNovos += nCoelhos
-    print(tReproducao, tMortalidade)
-print(coelhosNovos)
+print(f'\nEm {nGeracoes} era ter {coelhosNovos} coelhos.')
